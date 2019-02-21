@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Inicializamos la funcion contar
 int Contar(int [], int, int);
 
 int main()
@@ -21,9 +22,13 @@ int main()
     int vmejor[tam];
     int vcualquiera[tam];
 
+    //Completamos el array con los datos
     for(int i = 1; i <= tam; i++){
+        //Vector igual al elemento a buscar
         vpeor[i] = x;
+        //Vector diferente al elemento a buscar
         vmejor[i] = x*(i+1);
+        //Mitad vector igual y mitad diferente
         if(i <= (tam/2)){
             vcualquiera[i] = x;
         }else{
@@ -59,8 +64,10 @@ int main()
 }
 
 int Contar(int v[], int x, int tam){
+    //Veces que se encuentra x en v
     int nveces = 0;
     for (int i = 0; i <= tam; i++){
+        //Si el valor de la posicion i del vector es igual a x nveces + 1
         if(v[i] == x){
             nveces ++;
         }
