@@ -9,13 +9,10 @@ int main()
 {
     int x = 0;
     int n = 0;
-    cout << "----------------------------------------\n";
-    cout << "Valor a buscar: ";
+    cout << "Introduce el valor a buscar [x]: ";
     cin >> x;
-    cout << "----------------------------------------\n";
-    cout << "Tamano de los vectores: ";
+    cout << "Introduce los n.elmentos del vector [n]: ";
     cin >> n;
-    cout << "----------------------------------------\n";
 
     int *vpeor;
     int *vmejor;
@@ -38,29 +35,29 @@ int main()
         }
     }
 
-    cout << "VPEOR\n";
-    cout << "----------------------------------------\n";
+    cout << "\n\nVector vpeor:\n";
     for(int i = 1; i <= n; i++){
         cout << vpeor[i] << " ";
     }
-    cout << "\n----------------------------------------\n";
-    cout << "NVECES: " << Contar(vpeor,x,n);
 
-    cout << "\nVMEJOR\n";
-    cout << "----------------------------------------\n";
+    cout << "\n\nVector vmejor\n";
     for(int i = 1; i <= n; i++){
         cout << vmejor[i] << " ";
     }
-    cout << "\n----------------------------------------\n";
-    cout << "NVECES: " << Contar(vmejor,x,n);
 
-    cout << "\nVCUALQUIERA\n";
-    cout << "----------------------------------------\n";
+    cout << "\n\nVector vcualquiera\n";
     for(int i = 1; i <= n; i++){
         cout << vcualquiera[i] << " ";
     }
-    cout << "\n----------------------------------------\n";
-    cout << "NVECES: " << Contar(vcualquiera,x,n);
+
+    cout << "\n\nCaso peor\n";
+    cout << "Numero veces: " << Contar(vpeor,x,n);
+
+    cout << "\n\nCaso mejor\n";
+    cout << "Numero veces: " << Contar(vmejor,x,n);
+
+    cout << "\n\nOtro caso\n";
+    cout << "Numero veces: " << Contar(vcualquiera,x,n);
 
     return 0;
 }
