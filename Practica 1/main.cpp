@@ -3,7 +3,7 @@
 using namespace std;
 
 //Inicializamos la funcion contar
-int Contar(int [], int, int);
+int Contar(int *, int, int);
 
 int main()
 {
@@ -17,21 +17,24 @@ int main()
     cin >> n;
     cout << "----------------------------------------\n";
 
-    int vpeor[n];
-    int vmejor[n];
-    int vcualquiera[n];
+    int *vpeor;
+    int *vmejor;
+    int *vcualquiera;
 
+    vpeor = new int [n+1];
+    vmejor = new int [n+1];
+    vcualquiera = new int [n+1];
     //Completamos el array con los datos
     for(int i = 1; i <= n; i++){
         //Vector igual al elemento a buscar
         vpeor[i] = x;
         //Vector diferente al elemento a buscar
-        vmejor[i] = x*(i+1);
+        vmejor[i] = x+i;
         //Mitad vector igual y mitad diferente
         if(i <= (n/2)){
             vcualquiera[i] = x;
         }else{
-            vcualquiera[i] = x*(i+1);
+            vcualquiera[i] = x+i;
         }
     }
 
@@ -62,7 +65,7 @@ int main()
     return 0;
 }
 
-int Contar(int v[], int x, int n){
+int Contar(int *v, int x, int n){
     //Veces que se encuentra x en v
     int nveces = 0;
     for (int i = 0; i <= n; i++){
